@@ -9,18 +9,30 @@
 /* Begin PBXBuildFile section */
 		665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812F92B44CB8E00599ADE /* CarApp.swift */; };
 		665812FC2B44CB8E00599ADE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FB2B44CB8E00599ADE /* ContentView.swift */; };
-		665812FE2B44CB8E00599ADE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FD2B44CB8E00599ADE /* Item.swift */; };
+		665812FE2B44CB8E00599ADE /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FD2B44CB8E00599ADE /* Garage.swift */; };
 		665813002B44CB9300599ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665812FF2B44CB9300599ADE /* Assets.xcassets */; };
 		665813032B44CB9300599ADE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665813022B44CB9300599ADE /* Preview Assets.xcassets */; };
+		66BD201F2B44CD61009ED644 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD201E2B44CD61009ED644 /* Car.swift */; };
+		66BD20222B44D5D9009ED644 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD20212B44D5D9009ED644 /* CarView.swift */; };
+		66BD20242B44D675009ED644 /* CreateGarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD20232B44D675009ED644 /* CreateGarageView.swift */; };
+		66BD20272B44D692009ED644 /* GarageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD20262B44D692009ED644 /* GarageManager.swift */; };
+		66BD20292B44DA93009ED644 /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD20282B44DA93009ED644 /* GarageView.swift */; };
+		66BD202B2B44DAA3009ED644 /* CreateCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD202A2B44DAA3009ED644 /* CreateCarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		665812F62B44CB8E00599ADE /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665812F92B44CB8E00599ADE /* CarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarApp.swift; sourceTree = "<group>"; };
 		665812FB2B44CB8E00599ADE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		665812FD2B44CB8E00599ADE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		665812FD2B44CB8E00599ADE /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		665812FF2B44CB9300599ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		665813022B44CB9300599ADE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		66BD201E2B44CD61009ED644 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		66BD20212B44D5D9009ED644 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		66BD20232B44D675009ED644 /* CreateGarageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGarageView.swift; sourceTree = "<group>"; };
+		66BD20262B44D692009ED644 /* GarageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageManager.swift; sourceTree = "<group>"; };
+		66BD20282B44DA93009ED644 /* GarageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
+		66BD202A2B44DAA3009ED644 /* CreateCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +65,10 @@
 		665812F82B44CB8E00599ADE /* Car */ = {
 			isa = PBXGroup;
 			children = (
-				665812F92B44CB8E00599ADE /* CarApp.swift */,
-				665812FB2B44CB8E00599ADE /* ContentView.swift */,
-				665812FD2B44CB8E00599ADE /* Item.swift */,
+				66BD20252B44D684009ED644 /* ViewModels */,
+				66BD20202B44D5C9009ED644 /* Views */,
+				66BD201D2B44CD46009ED644 /* Models */,
+				665813092B44CBA400599ADE /* App Files */,
 				665812FF2B44CB9300599ADE /* Assets.xcassets */,
 				665813012B44CB9300599ADE /* Preview Content */,
 			);
@@ -68,6 +81,43 @@
 				665813022B44CB9300599ADE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		665813092B44CBA400599ADE /* App Files */ = {
+			isa = PBXGroup;
+			children = (
+				665812F92B44CB8E00599ADE /* CarApp.swift */,
+			);
+			name = "App Files";
+			sourceTree = "<group>";
+		};
+		66BD201D2B44CD46009ED644 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				665812FD2B44CB8E00599ADE /* Garage.swift */,
+				66BD201E2B44CD61009ED644 /* Car.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66BD20202B44D5C9009ED644 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				665812FB2B44CB8E00599ADE /* ContentView.swift */,
+				66BD202A2B44DAA3009ED644 /* CreateCarView.swift */,
+				66BD20212B44D5D9009ED644 /* CarView.swift */,
+				66BD20232B44D675009ED644 /* CreateGarageView.swift */,
+				66BD20282B44DA93009ED644 /* GarageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66BD20252B44D684009ED644 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				66BD20262B44D692009ED644 /* GarageManager.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +191,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				665812FC2B44CB8E00599ADE /* ContentView.swift in Sources */,
-				665812FE2B44CB8E00599ADE /* Item.swift in Sources */,
+				66BD20242B44D675009ED644 /* CreateGarageView.swift in Sources */,
+				66BD20222B44D5D9009ED644 /* CarView.swift in Sources */,
+				665812FE2B44CB8E00599ADE /* Garage.swift in Sources */,
+				66BD201F2B44CD61009ED644 /* Car.swift in Sources */,
+				66BD20292B44DA93009ED644 /* GarageView.swift in Sources */,
+				66BD202B2B44DAA3009ED644 /* CreateCarView.swift in Sources */,
 				665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */,
+				66BD20272B44D692009ED644 /* GarageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
