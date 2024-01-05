@@ -17,14 +17,23 @@ struct ContentView: View {
     var body: some View {
         if garages.isEmpty {
             CreateGarageView()
+                .transition(.opacity)
                 .onAppear {
                     prepareUI()
                 }
         } else {
             if cars.isEmpty {
                 CreateCarView()
+                    .transition(.opacity)
+                    .onAppear {
+                        prepareUI()
+                    }
             } else {
                 GarageView(cars: cars)
+                    .transition(.opacity)
+                    .onAppear {
+                        prepareUI()
+                    }
             }
         }
     }

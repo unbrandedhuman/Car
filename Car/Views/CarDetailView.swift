@@ -9,30 +9,44 @@ import SwiftUI
 
 struct CarDetailView: View {
     @Bindable var car: Car
+    @Binding var isActive: Bool
+    @EnvironmentObject var manager: GarageManager
     var body: some View {
         VStack {
             Text("About \(car.name)")
+                .font(.custom("Denver-Bold", size: 25))
                 .padding()
             
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Make: \(car.make)")
-                        .multilineTextAlignment(.leading)
-                    
-                    Text("Model: \(car.model)")
-                        .multilineTextAlignment(.leading)
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .trailing) {
-                    Text("Purchased \(car.purchaseDate.formatted(date: .abbreviated, time: .omitted))")
-                        .multilineTextAlignment(.trailing)
-                    
-                    Text(car.used ? "\(car.name) was bought used" : "\(car.name) was bought new")
-                        .multilineTextAlignment(.trailing)
-                }
-            }.padding()
+            if isActive {
+                VStack {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading) {
+                            Text("Make: \(car.make)")
+                                .multilineTextAlignment(.leading)
+                            
+                            Text("Model: \(car.model)")
+                                .multilineTextAlignment(.leading)
+                        }
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .trailing) {
+                            Text("Purchased \(car.purchaseDate.formatted(date: .abbreviated, time: .omitted))")
+                                .multilineTextAlignment(.trailing)
+                            
+                            Text(car.used ? "\(car.name) was bought new" : "\(car.name) was bought used")
+                                .multilineTextAlignment(.trailing)
+                        }
+                    }
+                    VStack(alignment: .leading) {
+                        if car.lastMaintenanceDate != nil {
+                            Text("Last taken for maintenance on \(car.lastMaintenanceDate!.formatted(date: .abbreviated, time: .omitted))")
+                                .multilineTextAlignment(.leading)
+                        }
+                    }
+                }.padding()
+                .transition(.opacity)
+            }
             
             Spacer()
             
@@ -52,34 +66,11 @@ struct CarDetailView: View {
         }
         .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
         .background {
-            switch car.color {
-            case .gold:
-                Color.yellow
-            case .silver:
-                Color.gray
-            case .red:
-                Color.red
-            case .orange:
-                Color.orange
-            case .yellow:
-                Color.yellow
-            case .green:
-                Color.green
-            case .blue:
-                Color.blue
-            case .purple:
-                Color.purple
-            case .pink:
-                Color.pink
-            case .white:
-                Color.white
-            case .black:
-                Color.black
-            }
+            manager.customColorReturn(car: self.car)
         }
     }
 }
 
 #Preview {
-    CarDetailView(car: Car(name: "Untitled", make: "Letterdots", model: "Car-1", lastMaintenanceDate: Date(), miles: "250,000", purchaseDate: Date(), used: false, color: .blue))
+    CarDetailView(car: Car(name: "Untitled", make: "Letterdots", model: "Car-1", lastMaintenanceDate: Date(), miles: "250,000", purchaseDate: Date(), used: false, color: .blue), isActive: .constant(true))
 }

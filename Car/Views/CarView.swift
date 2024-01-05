@@ -9,33 +9,39 @@ import SwiftUI
 
 struct CarView: View {
     @Bindable var car: Car
-    @State private var isActived = false
+    @EnvironmentObject var manager: GarageManager
+    @State private var isActive = false
     @State private var currentPositionY: CGFloat = .fullScreenHeight * 0.83
     @State private var newPositionY: CGFloat = .zero
     
+    private func togglePositionY() {
+        isActive.toggle()
+        newPositionY = isActive ?
+          .fullScreenHeight * 0.1 : .fullScreenHeight * 0.83
+    }
+    
     var body: some View {
         let tap = TapGesture()
-            .onEnded {
-                togglePositionY()
-                
-                self.currentPositionY = self.newPositionY
-            }
-                
+          .onEnded {
+            togglePositionY()
+              withAnimation(.snappy().speed(2)) { self.currentPositionY = self.newPositionY }
+          }
         let drag = DragGesture()
-            .onChanged { value in
-                withAnimation(.snappy().speed(2)) {
-                    self.currentPositionY =
-                    value.translation.height + self.newPositionY
-                }
+          .onChanged { value in
+            withAnimation(.default) {
+              self.currentPositionY =
+                value.translation.height + self.newPositionY
             }
-            .onEnded { value in
-                let offsetY = value.translation.height
-                    if offsetY > 100 { isActived = true } else { isActived = false }
+          }
+          .onEnded { value in
+            let offsetY = value.translation.height
+              withAnimation {
+                  if offsetY > 100 { isActive = true } else { isActive = false }
+              }
 
-                togglePositionY()
-                
-                self.currentPositionY = self.newPositionY
-            }
+            togglePositionY()
+            withAnimation(.snappy().speed(2)) { self.currentPositionY = self.newPositionY }
+          }
         
         ZStack {
             VStack {
@@ -49,6 +55,7 @@ struct CarView: View {
                 Image(systemName: "car.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .foregroundColor(manager.customColorReturn(car: self.car))
                     .frame(width: 150)
                 
                 Spacer()
@@ -65,22 +72,15 @@ struct CarView: View {
                 Spacer()
                 
             }
-            .ignoresSafeArea()
             
-            CarDetailView(car: car)
+            CarDetailView(car: car, isActive: $isActive)
+                .transition(.identity)
                 .cornerRadius(32)
-                .offset(y: currentPositionY)
                 .gesture(drag)
                 .gesture(tap)
-        }.ignoresSafeArea()
+                .offset(y: currentPositionY)
+        }
     }
-    
-    private func togglePositionY() {
-        isActived.toggle()
-        newPositionY = isActived ?
-            .fullScreenHeight * 0.1 : .fullScreenHeight * 0.83
-    }
-    
 }
 
 #Preview {
@@ -92,5 +92,5 @@ struct CarView: View {
         miles: "123,456",
         purchaseDate: Date(),
         used: false,
-        color: .silver))
+        color: .green))
 }

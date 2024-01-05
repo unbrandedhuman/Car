@@ -14,13 +14,13 @@ final class Car {
     var name: String
     var make: String
     var model: String
-    var lastMaintenanceDate: Date
+    var lastMaintenanceDate: Date?
     var miles: String
     var purchaseDate: Date
     var used: Bool
     var color: CarColor
     
-    init(name: String, make: String, model: String, lastMaintenanceDate: Date, miles: String, purchaseDate: Date, used: Bool, color: CarColor) {
+    init(name: String, make: String, model: String, lastMaintenanceDate: Date?, miles: String, purchaseDate: Date, used: Bool, color: CarColor) {
         self.name = name
         self.make = make
         self.model = model
