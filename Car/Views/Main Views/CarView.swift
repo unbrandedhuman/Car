@@ -89,6 +89,7 @@ struct CarView: View {
         make: "Letterdots",
         model: "Car 1",
         lastMaintenanceDate: Date(),
+        maintenanceDates: [],
         miles: "123,456",
         purchaseDate: Date(),
         used: false,

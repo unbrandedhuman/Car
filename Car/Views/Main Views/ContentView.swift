@@ -40,7 +40,7 @@ struct ContentView: View {
 
     private func addItem(name: String, make: String, model: String, lastMaintencanceDate: Date, miles: String, purchaseDate: Date, used: Bool, color: CarColor) {
         withAnimation {
-            let newItem = Car(name: name, make: make, model: model, lastMaintenanceDate: lastMaintencanceDate, miles: miles, purchaseDate: purchaseDate, used: used, color: color)
+            let newItem = Car(name: name, make: make, model: model, lastMaintenanceDate: lastMaintencanceDate, maintenanceDates: [], miles: miles, purchaseDate: purchaseDate, used: used, color: color)
             modelContext.insert(newItem)
         }
     }

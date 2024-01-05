@@ -96,7 +96,7 @@ struct CreateCarView: View {
                         .onEnded { value in
                             show.toggle()
                             if name != "" && make != "" && model != "" {
-                                let newCar = Car(name: name, make: make, model: model, lastMaintenanceDate: nil, miles: miles, purchaseDate: purchaseDate, used: used, color: color)
+                                let newCar = Car(name: name, make: make, model: model, lastMaintenanceDate: nil, maintenanceDates: [], miles: miles, purchaseDate: purchaseDate, used: used, color: color)
                                 modelContext.insert(newCar)
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.notificationOccurred(.success)

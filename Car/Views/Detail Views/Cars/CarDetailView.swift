@@ -11,6 +11,10 @@ struct CarDetailView: View {
     @Bindable var car: Car
     @Binding var isActive: Bool
     @EnvironmentObject var manager: GarageManager
+    @GestureState var b1press = false
+    @GestureState var b2press = false
+    @State var b1Show = false
+    @State var b2Show = false
     var body: some View {
         VStack {
             Text("About \(car.name)")
@@ -46,6 +50,46 @@ struct CarDetailView: View {
                     }
                 }.padding()
                 .transition(.opacity)
+                
+                HStack {
+                    Text("New Maintenance")
+                        .foregroundColor(manager.customColorReturn(car: car))
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(Color.neutralColor)
+                        }
+                        .scaleEffect(b2press ? 1.3 : 1)
+                        .animation(.spring(response: 0.5, dampingFraction: 0.6))
+                        .gesture(
+                            LongPressGesture(minimumDuration: 0.06)
+                                .updating($b2press) { currentState, gestureState, transaction in
+                                    gestureState = currentState
+                                }
+                                .onEnded { value in
+                                    b2Show.toggle()
+                                }
+                        )
+                    
+                    Text("Edit Car")
+                        .foregroundColor(manager.customColorReturn(car: car))
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(Color.neutralColor)
+                        }
+                        .scaleEffect(b2press ? 1.3 : 1)
+                        .animation(.spring(response: 0.5, dampingFraction: 0.6))
+                        .gesture(
+                            LongPressGesture(minimumDuration: 0.06)
+                                .updating($b2press) { currentState, gestureState, transaction in
+                                    gestureState = currentState
+                                }
+                                .onEnded { value in
+                                    b2Show.toggle()
+                                }
+                        )
+                }
             }
             
             Spacer()
@@ -72,5 +116,5 @@ struct CarDetailView: View {
 }
 
 #Preview {
-    CarDetailView(car: Car(name: "Untitled", make: "Letterdots", model: "Car-1", lastMaintenanceDate: Date(), miles: "250,000", purchaseDate: Date(), used: false, color: .blue), isActive: .constant(true))
+    CarDetailView(car: Car(name: "Untitled", make: "Letterdots", model: "Car-1", lastMaintenanceDate: Date(), maintenanceDates: [], miles: "250,000", purchaseDate: Date(), used: false, color: .blue), isActive: .constant(true))
 }
