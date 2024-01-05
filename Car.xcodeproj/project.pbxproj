@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660785DB2B45A83C00770CE1 /* CarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660785DA2B45A83C00770CE1 /* CarDetailView.swift */; };
+		660785DD2B45A88400770CE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660785DC2B45A88400770CE1 /* Extensions.swift */; };
+		660785E32B45ADD900770CE1 /* Denver-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785DF2B45AD9300770CE1 /* Denver-Bold.ttf */; };
+		660785E42B45ADD900770CE1 /* Denver-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785DE2B45AD9200770CE1 /* Denver-Regular.ttf */; };
+		660785E52B45ADD900770CE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665812FF2B44CB9300599ADE /* Assets.xcassets */; };
+		660785E62B45ADD900770CE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665813022B44CB9300599ADE /* Preview Assets.xcassets */; };
+		660785ED2B45B07700770CE1 /* outward-block.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785E72B45AF9400770CE1 /* outward-block.ttf */; };
+		660785EE2B45B07700770CE1 /* outward-borders.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785E82B45AF9500770CE1 /* outward-borders.ttf */; };
+		660785EF2B45B07700770CE1 /* outward-round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785E92B45AF9500770CE1 /* outward-round.ttf */; };
 		665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812F92B44CB8E00599ADE /* CarApp.swift */; };
 		665812FC2B44CB8E00599ADE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FB2B44CB8E00599ADE /* ContentView.swift */; };
 		665812FE2B44CB8E00599ADE /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FD2B44CB8E00599ADE /* Garage.swift */; };
-		665813002B44CB9300599ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665812FF2B44CB9300599ADE /* Assets.xcassets */; };
-		665813032B44CB9300599ADE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665813022B44CB9300599ADE /* Preview Assets.xcassets */; };
 		66BD201F2B44CD61009ED644 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD201E2B44CD61009ED644 /* Car.swift */; };
 		66BD20222B44D5D9009ED644 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD20212B44D5D9009ED644 /* CarView.swift */; };
 		66BD20242B44D675009ED644 /* CreateGarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD20232B44D675009ED644 /* CreateGarageView.swift */; };
@@ -21,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		660785DA2B45A83C00770CE1 /* CarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailView.swift; sourceTree = "<group>"; };
+		660785DC2B45A88400770CE1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		660785DE2B45AD9200770CE1 /* Denver-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Denver-Regular.ttf"; sourceTree = "<group>"; };
+		660785DF2B45AD9300770CE1 /* Denver-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Denver-Bold.ttf"; sourceTree = "<group>"; };
+		660785E22B45ADAE00770CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		660785E72B45AF9400770CE1 /* outward-block.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "outward-block.ttf"; sourceTree = "<group>"; };
+		660785E82B45AF9500770CE1 /* outward-borders.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "outward-borders.ttf"; sourceTree = "<group>"; };
+		660785E92B45AF9500770CE1 /* outward-round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "outward-round.ttf"; sourceTree = "<group>"; };
 		665812F62B44CB8E00599ADE /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665812F92B44CB8E00599ADE /* CarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarApp.swift; sourceTree = "<group>"; };
 		665812FB2B44CB8E00599ADE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +80,7 @@
 		665812F82B44CB8E00599ADE /* Car */ = {
 			isa = PBXGroup;
 			children = (
+				660785E22B45ADAE00770CE1 /* Info.plist */,
 				66BD20252B44D684009ED644 /* ViewModels */,
 				66BD20202B44D5C9009ED644 /* Views */,
 				66BD201D2B44CD46009ED644 /* Models */,
@@ -87,6 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				665812F92B44CB8E00599ADE /* CarApp.swift */,
+				660785DC2B45A88400770CE1 /* Extensions.swift */,
+				660785DF2B45AD9300770CE1 /* Denver-Bold.ttf */,
+				660785DE2B45AD9200770CE1 /* Denver-Regular.ttf */,
+				660785E72B45AF9400770CE1 /* outward-block.ttf */,
+				660785E82B45AF9500770CE1 /* outward-borders.ttf */,
+				660785E92B45AF9500770CE1 /* outward-round.ttf */,
 			);
 			name = "App Files";
 			sourceTree = "<group>";
@@ -106,6 +128,7 @@
 				665812FB2B44CB8E00599ADE /* ContentView.swift */,
 				66BD202A2B44DAA3009ED644 /* CreateCarView.swift */,
 				66BD20212B44D5D9009ED644 /* CarView.swift */,
+				660785DA2B45A83C00770CE1 /* CarDetailView.swift */,
 				66BD20232B44D675009ED644 /* CreateGarageView.swift */,
 				66BD20282B44DA93009ED644 /* GarageView.swift */,
 			);
@@ -178,8 +201,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665813032B44CB9300599ADE /* Preview Assets.xcassets in Resources */,
-				665813002B44CB9300599ADE /* Assets.xcassets in Resources */,
+				660785ED2B45B07700770CE1 /* outward-block.ttf in Resources */,
+				660785EE2B45B07700770CE1 /* outward-borders.ttf in Resources */,
+				660785EF2B45B07700770CE1 /* outward-round.ttf in Resources */,
+				660785E32B45ADD900770CE1 /* Denver-Bold.ttf in Resources */,
+				660785E42B45ADD900770CE1 /* Denver-Regular.ttf in Resources */,
+				660785E52B45ADD900770CE1 /* Assets.xcassets in Resources */,
+				660785E62B45ADD900770CE1 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +226,8 @@
 				66BD20292B44DA93009ED644 /* GarageView.swift in Sources */,
 				66BD202B2B44DAA3009ED644 /* CreateCarView.swift in Sources */,
 				665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */,
+				660785DB2B45A83C00770CE1 /* CarDetailView.swift in Sources */,
+				660785DD2B45A88400770CE1 /* Extensions.swift in Sources */,
 				66BD20272B44D692009ED644 /* GarageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,17 +365,21 @@
 				DEVELOPMENT_TEAM = XNQ726DDKG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Car/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Car;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.letterdots.Car;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letterdots.ff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -364,17 +398,21 @@
 				DEVELOPMENT_TEAM = XNQ726DDKG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Car/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Car;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.letterdots.Car;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letterdots.ff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

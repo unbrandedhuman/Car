@@ -22,6 +22,12 @@ struct CreateGarageView: View {
             presentationMode.wrappedValue.dismiss()
         } label: {
             Text("Let's drive.")
+                .foregroundColor(.neutralColor)
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 16)
+                        .foregroundColor(.accentColor)
+                }
         }
 
     }

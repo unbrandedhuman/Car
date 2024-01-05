@@ -13,8 +13,10 @@ struct GarageView: View {
         TabView {
             ForEach(cars) { car in
                 CarView(car: car)
+                    .ignoresSafeArea()
             }
         }.tabViewStyle(.page)
+            .ignoresSafeArea(edges: .bottom)
     }
 }
 
