@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct MaintenanceRecordView: View {
+    @Bindable var car: Car
+    @Binding var isActive: Bool
+    @EnvironmentObject var manager: GarageManager
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Maintenance Record")
+        
+        ForEach(car.maintenanceDates, id: \.self) { date in
+            
+        }
     }
 }
 
 #Preview {
-    MaintenanceRecordView()
+    MaintenanceRecordView(car: Car(name: "Untitled", make: "Letterdots", model: "Car-1", lastMaintenanceDate: Date(), maintenanceDates: [], miles: "250,000", purchaseDate: Date(), used: false, color: .blue), isActive: .constant(true))
 }

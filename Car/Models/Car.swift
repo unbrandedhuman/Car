@@ -15,20 +15,33 @@ final class Car {
     var make: String
     var model: String
     var lastMaintenanceDate: Date?
+    var maintenanceDates: [Date]
     var miles: String
     var purchaseDate: Date
     var used: Bool
     var color: CarColor
     
-    init(name: String, make: String, model: String, lastMaintenanceDate: Date?, miles: String, purchaseDate: Date, used: Bool, color: CarColor) {
+    init(name: String, make: String, model: String, lastMaintenanceDate: Date?, maintenanceDates: [Date], miles: String, purchaseDate: Date, used: Bool, color: CarColor) {
         self.name = name
         self.make = make
         self.model = model
         self.lastMaintenanceDate = lastMaintenanceDate
+        self.maintenanceDates = maintenanceDates
         self.miles = miles
         self.purchaseDate = purchaseDate
         self.used = used
         self.color = color
+    }
+}
+
+@Model
+final class Maintenance {
+    var date: Date
+    var types: [MaintenanceTypes]
+    
+    init(date: Date, types: [MaintenanceTypes]) {
+        self.date = date
+        self.types = types
     }
 }
 
@@ -44,4 +57,13 @@ enum CarColor: String, Codable, CaseIterable, Equatable {
     case pink = "Pink"
     case white = "White"
     case black = "Black"
+}
+
+enum MaintenanceTypes: String, Codable, CaseIterable, Equatable {
+    case oilChange = "Oil Change"
+    case tireRotation = "Tire Rotation"
+    case reprogramming = "Maintenance Light Reset"
+    case oilFilter = "Oil Filter Change"
+    case timingBelt = "Timing Belt Change"
+    case airFilter = "Air Filter Change"
 }
