@@ -17,6 +17,7 @@
 		660785EE2B45B07700770CE1 /* outward-borders.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785E82B45AF9500770CE1 /* outward-borders.ttf */; };
 		660785EF2B45B07700770CE1 /* outward-round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785E92B45AF9500770CE1 /* outward-round.ttf */; };
 		662675CA2B487EA200CFD2EC /* MaintenanceRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662675C92B487EA200CFD2EC /* MaintenanceRecordView.swift */; };
+		662675CC2B48BFA000CFD2EC /* MaintenanceRecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662675CB2B48BFA000CFD2EC /* MaintenanceRecordCard.swift */; };
 		665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812F92B44CB8E00599ADE /* CarApp.swift */; };
 		665812FC2B44CB8E00599ADE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FB2B44CB8E00599ADE /* ContentView.swift */; };
 		665812FE2B44CB8E00599ADE /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FD2B44CB8E00599ADE /* Garage.swift */; };
@@ -42,6 +43,7 @@
 		660785E82B45AF9500770CE1 /* outward-borders.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "outward-borders.ttf"; sourceTree = "<group>"; };
 		660785E92B45AF9500770CE1 /* outward-round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "outward-round.ttf"; sourceTree = "<group>"; };
 		662675C92B487EA200CFD2EC /* MaintenanceRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceRecordView.swift; sourceTree = "<group>"; };
+		662675CB2B48BFA000CFD2EC /* MaintenanceRecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceRecordCard.swift; sourceTree = "<group>"; };
 		665812F62B44CB8E00599ADE /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665812F92B44CB8E00599ADE /* CarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarApp.swift; sourceTree = "<group>"; };
 		665812FB2B44CB8E00599ADE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				660785DA2B45A83C00770CE1 /* CarDetailView.swift */,
 				662675C92B487EA200CFD2EC /* MaintenanceRecordView.swift */,
+				662675CB2B48BFA000CFD2EC /* MaintenanceRecordCard.swift */,
 			);
 			path = Cars;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */,
 				660785DB2B45A83C00770CE1 /* CarDetailView.swift in Sources */,
 				660785DD2B45A88400770CE1 /* Extensions.swift in Sources */,
+				662675CC2B48BFA000CFD2EC /* MaintenanceRecordCard.swift in Sources */,
 				66BD20272B44D692009ED644 /* GarageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,11 +15,25 @@ struct MaintenanceRecordView: View {
         Text("Maintenance Record")
         
         ForEach(car.maintenanceDates, id: \.self) { date in
-            
+            MaintenanceRecordCard(maintenance: date)
         }
     }
 }
 
 #Preview {
-    MaintenanceRecordView(car: Car(name: "Untitled", make: "Letterdots", model: "Car-1", lastMaintenanceDate: Date(), maintenanceDates: [], miles: "250,000", purchaseDate: Date(), used: false, color: .blue), isActive: .constant(true))
+    MaintenanceRecordView(car:
+        Car(name: "Untitled",
+            make: "Letterdots",
+            model: "Car-1",
+            lastMaintenanceDate: Date(),
+            maintenanceDates: [
+                Maintenance(date: Date(), types: [.airFilter, .oilFilter]),
+                Maintenance(date: Date(), types: [.oilChange, .tireRotation]),
+                Maintenance(date: Date(), types: [.reprogramming, .timingBelt]),
+            ],
+            miles: "250,000",
+            purchaseDate: Date(),
+            used: false,
+            color: .blue),
+    isActive: .constant(true))
 }

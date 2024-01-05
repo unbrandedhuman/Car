@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct MaintenanceRecordCard: View {
+    @Bindable var maintenance: Maintenance
+    @EnvironmentObject var manager: GarageManager
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, content: {
+            Text(maintenance.date.formatted(date: .abbreviated, time: .omitted))
+            
+            ForEach(maintenance.types, id: \.self) { type in
+                Text("-\(type.rawValue)")
+                    .multilineTextAlignment(.leading)
+            }
+        })
     }
 }
 
 #Preview {
-    MaintenanceRecordCard()
+    MaintenanceRecordCard(maintenance: Maintenance(date: Date(), types: [.airFilter, .oilChange]))
 }
