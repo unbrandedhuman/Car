@@ -52,10 +52,15 @@ struct CarView: View {
                 
                 Spacer()
                 
-                Image(systemName: "car.fill")
+//                Image(systemName: "car.fill")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .foregroundColor(manager.customColorReturn(car: self.car))
+//                    .frame(width: 150)
+                Image("CarBlack")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(manager.customColorReturn(car: self.car))
+//                    .foregroundColor(manager.customColorReturn(car: self.car))
                     .frame(width: 150)
                 
                 Spacer()
