@@ -66,7 +66,7 @@ struct CarView: View {
             
             Spacer()
             
-            AddMaintenanceCard()
+            AddMaintenanceCard(car: car)
                 .cornerRadius(55 - 10)
                 .padding(10)
                 .ignoresSafeArea()

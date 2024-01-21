@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct AddMaintenanceCard: View {
+    @Bindable var car: Car
     @State var maintenanceTypes: [MaintenanceTypes] = []
     @State var date = Date()
+    @State var status: currentStatus = .idle
     var body: some View {
         VStack {
             if maintenanceTypes == [] {
-                DatePicker("Date", selection: $date, displayedComponents: .date)
+                DatePicker("Log maintenance", selection: $date, displayedComponents: .date)
                     .padding(.horizontal)
             } else {
                 HStack {
@@ -21,7 +23,7 @@ struct AddMaintenanceCard: View {
                         if type == .airFilter {
                             Text("💨")
                         } else if type == .oilChange {
-                            Text("💧")
+                            Text("⛽️")
                         } else if type == .oilFilter {
                             Text("🛢️")
                         } else if type == .reprogramming {
@@ -32,9 +34,7 @@ struct AddMaintenanceCard: View {
                             Text("🛞")
                         }
                         
-                        if maintenanceTypes.last != type {
-                            Text("+")
-                        }
+                        Text("+")
                     }
                 }
             }
@@ -42,27 +42,90 @@ struct AddMaintenanceCard: View {
             HStack {
                 // Functions
                 VStack {
-                    MaintenanceCalcButton(type: .airFilter)
+                    Button {
+                        if status == .add {
+                            maintenanceTypes.append(.airFilter)
+                        } else if maintenanceTypes.isEmpty {
+                            maintenanceTypes.append(.airFilter)
+                        }
+                    } label: {
+                        MaintenanceCalcButton(type: .airFilter)
+                    }.sensoryFeedback(.selection, trigger: maintenanceTypes)
                     
-                    MaintenanceCalcButton(type: .oilChange)
+                    Button {
+                        if status == .add {
+                            maintenanceTypes.append(.oilChange)
+                        } else if maintenanceTypes.isEmpty {
+                            maintenanceTypes.append(.oilChange)
+                        }
+                    } label: {
+                        MaintenanceCalcButton(type: .oilChange)
+                    }.sensoryFeedback(.selection, trigger: maintenanceTypes)
                     
-                    MaintenanceCalcButton(type: .oilFilter)
+                    Button {
+                        if status == .add {
+                            maintenanceTypes.append(.oilFilter)
+                        } else if maintenanceTypes.isEmpty {
+                            maintenanceTypes.append(.oilFilter)
+                        }
+                    } label: {
+                        MaintenanceCalcButton(type: .oilFilter)
+                    }.sensoryFeedback(.selection, trigger: maintenanceTypes)
                 }
                 // Functions
                 VStack {
-                    MaintenanceCalcButton(type: .reprogramming)
+                    Button {
+                        if status == .add {
+                            maintenanceTypes.append(.reprogramming)
+                        } else if maintenanceTypes.isEmpty {
+                            maintenanceTypes.append(.reprogramming)
+                        }
+                    } label: {
+                        MaintenanceCalcButton(type: .reprogramming)
+                    }.sensoryFeedback(.selection, trigger: maintenanceTypes)
                     
-                    MaintenanceCalcButton(type: .timingBelt)
+                    Button {
+                        if status == .add {
+                            maintenanceTypes.append(.timingBelt)
+                        } else if maintenanceTypes.isEmpty {
+                            maintenanceTypes.append(.timingBelt)
+                        }
+                    } label: {
+                        MaintenanceCalcButton(type: .timingBelt)
+                    }.sensoryFeedback(.selection, trigger: maintenanceTypes)
                     
-                    MaintenanceCalcButton(type: .tireRotation)
+                    Button {
+                        if status == .add {
+                            maintenanceTypes.append(.tireRotation)
+                        } else if maintenanceTypes.isEmpty {
+                            maintenanceTypes.append(.tireRotation)
+                        }
+                    } label: {
+                        MaintenanceCalcButton(type: .tireRotation)
+                    }.sensoryFeedback(.selection, trigger: maintenanceTypes)
                 }
                 // Operations
                 VStack {
-                    Circle()
+                    Button {
+                        status = .back
+                        if !maintenanceTypes.isEmpty {
+                            maintenanceTypes.removeLast()
+                        }
+                    } label: {
+                        MaintenanceCalcButton(operation: "minus")
+                    }.sensoryFeedback(.selection, trigger: status)
+
+                    Button {
+                        status = .add
+                    } label: {
+                        MaintenanceCalcButton(operation: "plus")
+                    }
                     
-                    Circle()
-                    
-                    Circle()
+                    Button {
+                        status = .forward
+                    } label: {
+                        MaintenanceCalcButton(operation: "continue")
+                    }
                 }
             }
         }
@@ -72,7 +135,8 @@ struct AddMaintenanceCard: View {
 }
 
 struct MaintenanceCalcButton: View {
-    @State var type: MaintenanceTypes
+    @State var type: MaintenanceTypes?
+    @State var operation: String?
     var body: some View {
         Circle()
             .fill(.ultraThinMaterial)
@@ -81,7 +145,7 @@ struct MaintenanceCalcButton: View {
                     Text("💨")
                         .font(.system(size: 60))
                 } else if type == .oilChange {
-                    Text("💧")
+                    Text("⛽️")
                         .font(.system(size: 60))
                 } else if type == .oilFilter {
                     Text("🛢️")
@@ -95,11 +159,39 @@ struct MaintenanceCalcButton: View {
                 } else if type == .tireRotation {
                     Text("🛞")
                         .font(.system(size: 60))
+                } else if operation == "minus" {
+                    Image(systemName: "minus")
+                        .foregroundStyle(Color.textColor)
+                        .font(.system(size: 60))
+                } else if operation == "plus" {
+                    Image(systemName: "plus")
+                        .foregroundStyle(Color.textColor)
+                        .font(.system(size: 60))
+                } else if operation == "continue" {
+                    Image(systemName: "arrow.right")
+                        .foregroundStyle(Color.textColor)
+                        .font(.system(size: 60))
                 }
             }
     }
 }
 
+enum currentStatus {
+    case add
+    case back
+    case forward
+    case idle
+}
+
 #Preview {
-    AddMaintenanceCard()
+    AddMaintenanceCard(car: Car(
+        name: "Car-1",
+        make: "Letterdots",
+        model: "Car 1",
+        lastMaintenanceDate: Date(),
+        maintenanceDates: [],
+        miles: "123,456",
+        purchaseDate: Date(),
+        used: false,
+        color: .green))
 }
