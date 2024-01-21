@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "screencorners",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kylebshr/ScreenCorners.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bf4ef8ad953af3b2ad50dd46d30bd0c036471a88"
+      }
+    }
+  ],
+  "version" : 2
+}

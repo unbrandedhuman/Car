@@ -14,8 +14,11 @@ struct GarageView: View {
             ForEach(cars) { car in
                 CarView(car: car)
                     .ignoresSafeArea()
+                    .tag(car)
             }
-        }.tabViewStyle(.page)
+            CreateCarView()
+                .tag(0)
+        }.tabViewStyle(.page(indexDisplayMode: .never))
             .ignoresSafeArea(edges: .bottom)
     }
 }

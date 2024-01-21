@@ -14,77 +14,66 @@ struct CarView: View {
     @State private var currentPositionY: CGFloat = .fullScreenHeight * 0.83
     @State private var newPositionY: CGFloat = .zero
     
-    private func togglePositionY() {
-        isActive.toggle()
-        newPositionY = isActive ?
-          .fullScreenHeight * 0.1 : .fullScreenHeight * 0.83
-    }
+    let gradient = LinearGradient(
+            gradient: Gradient(stops: [
+                .init(color: .neutralColor, location: 0),
+                .init(color: .clear, location: 0.4)
+            ]),
+            startPoint: .bottom,
+            endPoint: .top
+        )
     
     var body: some View {
-        let tap = TapGesture()
-          .onEnded {
-            togglePositionY()
-              withAnimation(.snappy().speed(2)) { self.currentPositionY = self.newPositionY }
-          }
-        let drag = DragGesture()
-          .onChanged { value in
-            withAnimation(.default) {
-              self.currentPositionY =
-                value.translation.height + self.newPositionY
-            }
-          }
-          .onEnded { value in
-            let offsetY = value.translation.height
-              withAnimation {
-                  if offsetY > 100 { isActive = true } else { isActive = false }
-              }
-
-            togglePositionY()
-            withAnimation(.snappy().speed(2)) { self.currentPositionY = self.newPositionY }
-          }
-        
-        ZStack {
-            VStack {
-                Text(car.name)
-                    .font(.custom("Denver-Bold", size: 40, relativeTo: .largeTitle))
-                    .textCase(.lowercase)
-                    .minimumScaleFactor(0.4)
-                
-                Spacer()
-                
-//                Image(systemName: "car.fill")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .foregroundColor(manager.customColorReturn(car: self.car))
-//                    .frame(width: 150)
-                Image("CarBlack")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-//                    .foregroundColor(manager.customColorReturn(car: self.car))
-                    .frame(width: 150)
-                
-                Spacer()
-                
-                Text("\(car.miles)" != "0" ? car.miles : "No miles")
-                    .font(.custom("Outward-Block", size: 900))
-                    .textCase(.lowercase)
-                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 400)
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(1)
-                    .transition(.scale)
-                    .padding()
-                
-                Spacer()
-                
-            }
+        VStack {
+            Image("placeholder")
+                        .resizable()
+                        .ignoresSafeArea(edges: .top)
+                        .aspectRatio(contentMode: .fit)
+                        .overlay(
+                            VStack {
+                                HStack {
+                                    ZStack(alignment: .top) {
+                                        Button(action: {
+                                            
+                                        }, label: {
+                                            Image(systemName: "gear")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(maxWidth: 40)
+                                                .foregroundColor(.normalButtonColor)
+                                                .padding(8)
+                                                .background(Circle().fill(.ultraThinMaterial))
+                                        })
+                                    }.padding(.horizontal, 10)
+                                    Spacer()
+                                    ZStack(alignment: .top) {
+                                        Text(car.name)
+                                            .font(.system(.largeTitle))
+                                    }.padding(.horizontal, 10)
+                                }
+                                
+                                ZStack(alignment: .bottom) {
+                                    Color.clear
+                                        .blur(radius: 20)
+                                        .padding(-20)
+                                        .clipped()
+                                        .mask(gradient)
+                                    
+                                    gradient
+                                }.ignoresSafeArea(edges: .top)
+                            }
+                        )
             
-            CarDetailView(car: car, isActive: $isActive)
-                .transition(.identity)
-                .cornerRadius(32)
-                .gesture(drag)
-                .gesture(tap)
-                .offset(y: currentPositionY)
+            Spacer()
+            
+            AddMaintenanceCard()
+                .cornerRadius(55 - 10)
+                .padding(10)
+                .ignoresSafeArea()
+            
         }
+        .background(Color.neutral)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

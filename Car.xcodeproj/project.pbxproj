@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66001EB12B48E0C000EC01F9 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66001EB02B48E0C000EC01F9 /* InformationView.swift */; };
-		660785DB2B45A83C00770CE1 /* CarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660785DA2B45A83C00770CE1 /* CarDetailView.swift */; };
 		660785DD2B45A88400770CE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660785DC2B45A88400770CE1 /* Extensions.swift */; };
 		660785E32B45ADD900770CE1 /* Denver-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785DF2B45AD9300770CE1 /* Denver-Bold.ttf */; };
 		660785E42B45ADD900770CE1 /* Denver-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785DE2B45AD9200770CE1 /* Denver-Regular.ttf */; };
@@ -19,6 +17,7 @@
 		660785EF2B45B07700770CE1 /* outward-round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 660785E92B45AF9500770CE1 /* outward-round.ttf */; };
 		662675CA2B487EA200CFD2EC /* MaintenanceRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662675C92B487EA200CFD2EC /* MaintenanceRecordView.swift */; };
 		662675CC2B48BFA000CFD2EC /* MaintenanceRecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662675CB2B48BFA000CFD2EC /* MaintenanceRecordCard.swift */; };
+		6636F3F12B5DC57400D83953 /* AddMaintenanceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636F3F02B5DC57400D83953 /* AddMaintenanceCard.swift */; };
 		665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812F92B44CB8E00599ADE /* CarApp.swift */; };
 		665812FC2B44CB8E00599ADE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FB2B44CB8E00599ADE /* ContentView.swift */; };
 		665812FE2B44CB8E00599ADE /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665812FD2B44CB8E00599ADE /* Garage.swift */; };
@@ -35,8 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66001EB02B48E0C000EC01F9 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		660785DA2B45A83C00770CE1 /* CarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailView.swift; sourceTree = "<group>"; };
 		660785DC2B45A88400770CE1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		660785DE2B45AD9200770CE1 /* Denver-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Denver-Regular.ttf"; sourceTree = "<group>"; };
 		660785DF2B45AD9300770CE1 /* Denver-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Denver-Bold.ttf"; sourceTree = "<group>"; };
@@ -46,6 +43,7 @@
 		660785E92B45AF9500770CE1 /* outward-round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "outward-round.ttf"; sourceTree = "<group>"; };
 		662675C92B487EA200CFD2EC /* MaintenanceRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceRecordView.swift; sourceTree = "<group>"; };
 		662675CB2B48BFA000CFD2EC /* MaintenanceRecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceRecordCard.swift; sourceTree = "<group>"; };
+		6636F3F02B5DC57400D83953 /* AddMaintenanceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaintenanceCard.swift; sourceTree = "<group>"; };
 		665812F62B44CB8E00599ADE /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665812F92B44CB8E00599ADE /* CarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarApp.swift; sourceTree = "<group>"; };
 		665812FB2B44CB8E00599ADE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,10 +112,9 @@
 		662675C82B487E8C00CFD2EC /* Cars */ = {
 			isa = PBXGroup;
 			children = (
-				660785DA2B45A83C00770CE1 /* CarDetailView.swift */,
 				662675C92B487EA200CFD2EC /* MaintenanceRecordView.swift */,
 				662675CB2B48BFA000CFD2EC /* MaintenanceRecordCard.swift */,
-				66001EB02B48E0C000EC01F9 /* InformationView.swift */,
+				6636F3F02B5DC57400D83953 /* AddMaintenanceCard.swift */,
 			);
 			path = Cars;
 			sourceTree = "<group>";
@@ -287,6 +284,9 @@
 				Base,
 			);
 			mainGroup = 665812ED2B44CB8E00599ADE;
+			packageReferences = (
+				6636F3F22B5DC66A00D83953 /* XCRemoteSwiftPackageReference "ScreenCorners" */,
+			);
 			productRefGroup = 665812F72B44CB8E00599ADE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,10 +335,9 @@
 				665812FE2B44CB8E00599ADE /* Garage.swift in Sources */,
 				66BD201F2B44CD61009ED644 /* Car.swift in Sources */,
 				66BD20292B44DA93009ED644 /* GarageView.swift in Sources */,
-				66001EB12B48E0C000EC01F9 /* InformationView.swift in Sources */,
 				66BD202B2B44DAA3009ED644 /* CreateCarView.swift in Sources */,
+				6636F3F12B5DC57400D83953 /* AddMaintenanceCard.swift in Sources */,
 				665812FA2B44CB8E00599ADE /* CarApp.swift in Sources */,
-				660785DB2B45A83C00770CE1 /* CarDetailView.swift in Sources */,
 				660785DD2B45A88400770CE1 /* Extensions.swift in Sources */,
 				662675CC2B48BFA000CFD2EC /* MaintenanceRecordCard.swift in Sources */,
 				66BD20272B44D692009ED644 /* GarageManager.swift in Sources */,
@@ -639,6 +638,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6636F3F22B5DC66A00D83953 /* XCRemoteSwiftPackageReference "ScreenCorners" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylebshr/ScreenCorners.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 665812EE2B44CB8E00599ADE /* Project object */;
 }

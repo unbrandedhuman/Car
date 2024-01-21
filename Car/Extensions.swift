@@ -24,5 +24,6 @@ public extension Color {
         blue: 0.467
     )
     
-    static var neutralColor = Color("text")
+    static var neutralColor = Color("neutralColor")
+    static var textColor = Color("text")
 }
